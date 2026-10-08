@@ -27,6 +27,22 @@
 
 class Usuario {
   // Tu código aquí
+  constructor(nombre, saldo) {
+    this.nombre = nombre;
+    this.saldo = saldo;
+  }
+
+  enviar(monto) {
+    this.monto = monto;
+
+    if(monto > this.saldo) {
+      return "Saldo insuficiente";
+    } else {
+      this.saldo -= monto;
+      return `${this.nombre} envió $${this.monto}. Saldo: $${this.saldo}`;
+    }
+  }
+
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu clase
